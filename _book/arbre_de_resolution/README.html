@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Exercices d&#39;introduction | </title>
+        <title>Arbre de résolution | </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../carnivores_et_herbivores/README.html" />
+    <link rel="next" href="../unification/README.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../manger_des_fruits/README.html" />
     
 
         
@@ -37,7 +37,7 @@
 
 
         
-    <div class="book"  data-level="1" data-basepath=".." data-revision="1417178304271">
+    <div class="book"  data-level="4" data-basepath=".." data-revision="1417178304271">
     
 
 <div class="book-summary">
@@ -69,7 +69,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="exercices_dintroduction/README.html">
+        <li class="chapter " data-level="1" data-path="exercices_dintroduction/README.html">
             
                 
                     <a href="../exercices_dintroduction/README.html">
@@ -117,7 +117,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4" data-path="arbre_de_resolution/README.html">
+        <li class="chapter active" data-level="4" data-path="arbre_de_resolution/README.html">
             
                 
                     <a href="../arbre_de_resolution/README.html">
@@ -237,47 +237,126 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_5197">
+                    <section class="normal" id="section-gitbook_5195">
                     
-                        <h1 id="exercices-dintroduction">Exercices d&#39;introduction</h1>
-<h2 id="exercice-1">Exercice 1</h2>
-<p>Soit le fait <code>bidule(toto, X, pierre, Y).</code> Quels sont les noms des relations, leur arité, les noms des objets et les variables apparaissant dans ce fait ? Ce fait est-il clos ?</p>
+                        <h1 id="arbre-de-rsolution">Arbre de résolution</h1>
+<h3 id="connaissances">Connaissances</h3>
+<pre><code class="lang-prolog">ile(crozet, france, indien).
+ile(georgie, ru, atlantique).
+ile(francois, russie, arctique).
+ile(ellesmere, canada, arctique).
+hemisphere(indien, sud).
+hemisphere(atlantique, sud).
+hemisphere(arctique, nord).
+possession(Pays, Hemisphere):-
+ile(NomIle, Pays, Ocean),
+hemisphere(Ocean, Hemisphere).
+</code></pre>
+<h3 id="questions">Questions</h3>
+<ol>
+<li><code>possession(france, sud).</code></li>
+<li><code>possession(russie, sud).</code></li>
+<li><code>possession(X, nord).</code></li>
+</ol>
+<h3 id="rsolutions">Résolutions</h3>
 <ul>
-<li>Nom : bidule</li>
-<li>Arité : 4</li>
-<li>Objets : toto, pierre</li>
-<li>Variables : X, Y</li>
-<li>Ce fait n&#39;est pas clos
-*</li>
-</ul>
-<h2 id="exercice-2">Exercice 2</h2>
-<p>Représenter à l&#39;aide de faits les connaissances suivantes :</p>
+<li><p><code>possession(france, sud).</code></p>
 <ul>
-<li>5 est impair<ul>
-<li><code>impair(5).</code></li>
-</ul>
-</li>
-<li>5 est supérieur à 3<ul>
-<li><code>superieura3(5).</code></li>
-</ul>
-</li>
-<li>Snoopy est un chien<ul>
-<li><code>chien(&#39;Snoopy&#39;).</code></li>
-</ul>
-</li>
-<li>Le cours de programmation logique a lieu le mercredi de 13:30 à 15:30, en grand amphi.<ul>
-<li><code>cours(&#39;mercredi&#39;, &#39;13:30&#39;, &#39;15:30&#39;, &#39;grand amphi&#39;).</code></li>
+<li>Lecture de 8</li>
+<li><code>ile(NomIle, france, Ocean), hemisphere(Ocean, sud)</code><ul>
+<li>Lecture de 1</li>
+<li><code>NomIle = crozet</code></li>
+<li><code>Ocean = indien</code><ul>
+<li>Vérification</li>
+<li><code>hemisphere(indien, sud).</code><ul>
+<li>True</li>
 </ul>
 </li>
 </ul>
-<h2 id="exercice-3">Exercice 3</h2>
-<p>Exprimer, quand c&#39;est possible, les connaissances suivantes sous forme de clauses Prolog :</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>possession(russie, sud).</code></p>
 <ul>
-<li>Dominique est le père de Jeanne</li>
-<li>Tous les chiens sont des animaux</li>
-<li>Les chiens et les hommes sont des mammifères</li>
-<li>Le successeur d&#39;un entier est un entier</li>
-<li>La relation <code>frere(X,Y)</code> X est le frère de Y est symétrique</li>
+<li>Lecture de 8</li>
+<li><code>ile(NomIle, russie, Ocean), hemisphere(Ocean, sud)</code><ul>
+<li>Lecture de 3</li>
+<li><code>NomIle = francois</code></li>
+<li><code>Ocean = arctique</code><ul>
+<li>Vérification</li>
+<li><code>hemisphere(arctique, sud).</code><ul>
+<li>False</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>possession(X, nord).</code></p>
+<ul>
+<li>Lecture de 8</li>
+<li><code>ile(NomIle, france, Ocean), hemisphere(Ocean, sud)</code><ol>
+<li>Lecture de 1<ul>
+<li><code>NomIle = crozet</code></li>
+<li><code>Pays = france</code></li>
+<li><code>Ocean = indien</code><ul>
+<li>Vérification</li>
+<li><code>hemisphere(indien, nord).</code><ul>
+<li>False</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lecture de 2<ul>
+<li><code>NomIle = georgie</code></li>
+<li><code>Pays = ru</code></li>
+<li><code>Ocean = atlantique</code><ul>
+<li>Vérification</li>
+<li><code>hemisphere(atlantique, nord).</code><ul>
+<li>False</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lecture de 3<ul>
+<li><code>NomIle = francois</code></li>
+<li><code>Pays = russie</code></li>
+<li><code>Ocean = arctique</code><ul>
+<li>Vérification</li>
+<li><code>hemisphere(arctique, nord).</code><ul>
+<li>True</li>
+<li><strong>Attention</strong> : Prolog interrompt ses recherches à la première solution trouvé, ajouter <code>;</code> pour le forcer à continuer</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lecture de 4<ul>
+<li><code>NomIle = ellesmere</code></li>
+<li><code>Pays = canada</code></li>
+<li><code>Ocean = arctique</code><ul>
+<li>Vérification</li>
+<li><code>hemisphere(arctique, nord).</code><ul>
+<li>True</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
 </ul>
 
                     
@@ -289,10 +368,10 @@
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../manger_des_fruits/README.html" class="navigation navigation-prev " aria-label="Previous page: Manger des fruits"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../carnivores_et_herbivores/README.html" class="navigation navigation-next " aria-label="Next page: Carnivores et Herbivores"><i class="fa fa-angle-right"></i></a>
+        <a href="../unification/README.html" class="navigation navigation-next " aria-label="Next page: Unification"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

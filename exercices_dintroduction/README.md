@@ -1,5 +1,6 @@
 # Exercices d'introduction
 
+
 ## Exercice 1
 Soit le fait `bidule(toto, X, pierre, Y).` Quels sont les noms des relations, leur arité, les noms des objets et les variables apparaissant dans ce fait ? Ce fait est-il clos ?
 

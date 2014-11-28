@@ -19,7 +19,7 @@
     
     
     
-    <link rel="prev" href="../manger_des_fruits/README.html" />
+    <link rel="prev" href="../arbre_de_resolution/README.html" />
     
 
         
@@ -35,7 +35,7 @@
 
 
         
-    <div class="book"  data-level="4" data-basepath=".." data-revision="1417169607881">
+    <div class="book"  data-level="5" data-basepath=".." data-revision="1417178304271">
     
 
 <div class="book-summary">
@@ -115,13 +115,29 @@
         </li>
     
         
-        <li class="chapter active" data-level="4" data-path="unification/README.html">
+        <li class="chapter " data-level="4" data-path="arbre_de_resolution/README.html">
+            
+                
+                    <a href="../arbre_de_resolution/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Arbre de résolution
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="5" data-path="unification/README.html">
             
                 
                     <a href="../unification/README.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>4.</b>
+                            <b>5.</b>
                         
                          Unification
                     </a>
@@ -219,9 +235,52 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1003">
+                    <section class="normal" id="section-gitbook_5199">
                     
                         <h1 id="unification">Unification</h1>
+<ul>
+<li><code>pierre = marie</code> : Non</li>
+<li><code>pierre = pierre</code> : Oui</li>
+<li><code>X = jean</code> : Oui</li>
+<li><code>X = hemisphere(indien, nord)</code> : Oui</li>
+<li><code>jean = X</code> : Non</li>
+<li><code>pierre = aime(marie, chocolat)</code> : Non<ul>
+<li>arité : 1 <strong>vs</strong> arité : 2</li>
+</ul>
+</li>
+<li><code>aime(marie, chocolat) = aime(pierre, nougatine)</code> : Non</li>
+<li><code>aime(X, chocolat) = aime(pierre , chocolat)</code> : Oui<ul>
+<li>Sig = {(X, pierre)}</li>
+</ul>
+</li>
+<li><code>aime(X, chocolat) = aime(pierre, Y)</code> : Oui<ul>
+<li>Sig = {(X, pierre), (Y, chocolat)}</li>
+</ul>
+</li>
+<li><code>pere(X, marie) = pere(Therese, Y)</code> : Oui<ul>
+<li>Sig = {(X, Therese), (Y, marie)}</li>
+<li>Therese est une variable</li>
+</ul>
+</li>
+<li><code>pere(paul, marie) = pere(Therese, Y)</code> : oui<ul>
+<li>Sig = {(Therese = paul), (Y = marie)}</li>
+</ul>
+</li>
+<li><code>X = pere(paul, marie)</code> : oui<ul>
+<li>Sig = { (X, pere(paul, marie))}</li>
+</ul>
+</li>
+<li><code>plus(S(X), Y, S(Z)) = plus(U, V, s(s(s(O))))</code><ul>
+<li>S(X) = U</li>
+<li>Y = V</li>
+<li>S(Z) = S(S(S(O)))</li>
+<li>Z = S(S(O))<ul>
+<li>Sig = {(X,S(U)), (Y,V), (Z,S(S(O)))}</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
                     
                     </section>
@@ -232,7 +291,7 @@
         </div>
 
         
-        <a href="../manger_des_fruits/README.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Manger des fruits"><i class="fa fa-angle-left"></i></a>
+        <a href="../arbre_de_resolution/README.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Arbre de résolution"><i class="fa fa-angle-left"></i></a>
         
         
     </div>
