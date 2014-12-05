@@ -1,0 +1,28 @@
+femme(augustine).
+homme(lea).
+femme(jennifer).% faux car jennifer nexiste pas
+femme(X),enfant(_,X,_).
+homme(X).
+
+parent(franck, charles).
+parent(X, charles).
+parent(franck, X).
+
+grand_parent(marie,X).
+grand_parent(X, sonya).
+
+est_mere(marie).
+est_mere(augustine).
+
+est_pere(marcel).
+
+est_enfant(rolande,marie).
+est_enfant(rolande, X).
+
+fille(rolande, marie).
+fille(X, marie).
+
+fils(X, marie).
+fils(X, marie).
+
+k
