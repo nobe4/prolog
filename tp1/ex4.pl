@@ -9,11 +9,25 @@ arc(friche, gommegnies).
 arc(croix, denain).
 arc(denain, gommegnies).
 
+voisin(X,Y):- arc(X,Y).
+voisin(X,Y):- arc(Y,X).
+
 itineraire(Start, End):- arc(Start, End).
 itineraire(Start, End):- arc(Start, Z), itineraire(Z, End).
 
-decrireItineraire(Start, End, _):-  arc(Start, End).
-decrireItineraire(Start, End, Etapes):-
-	arc(Start, Etape),
- 	decrireItineraire(Etape, End, Etape),
-	append(Etapes, Etape).
+chemin(Start,End,List) :- arc(Start,End), append([Start],[End],List).
+chemin(Start,End,List) :- arc(Start,Etape), chemin(Etape,End,List1), append([Start],List1,List).
+
+cheminTailleFixe(Start,End,List,Taille):-
+	chemin(Start,End, List1),
+	length(List1, L),
+	L-1 =:= Taille,
+	append(List1,[],List).
+
+cheminTailleMin(Start,End,List,Taille):-
+	chemin(Start,End, List1),
+	length(List1, L),
+	L-1 >= Taille,
+	append(List1,[],List).
+
+
