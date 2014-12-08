@@ -1,0 +1,7 @@
+% Tests pour l'exercice 4 dans le fichier ex4-1.pl
+
+chemin(bachant,gommegnies,L,C).
+cheminCoutMin(eclaibes,X,L,11).
+
+chemin(gommegnies,aulnoye,L,20).
+chemin(aulnoye,gommegnies,L,20).
