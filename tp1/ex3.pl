@@ -39,8 +39,8 @@ noccur(E,[Y|T],X):- E \= Y, noccur(E, T, X).
 % Param 2 : Elément 2  
 % Param : Liste dans laquelle on recherche l'adjacence des éléments.
 % Usage : Recherche l'adjacence des paramètres 1 et 2 (dans cet ordre) dans le paramètre 3.
-adjacent(X,Y,[Z|T]):- X \= Z, Y \= Z,  adjacent(X,Y,T).
 adjacent(X,Y,[X,Y|_]).
+adjacent(X,Y,[_|T]):- adjacent(X,Y,T).
 
 % Titre : Définition de la règle prefix
 % Règle : prefix/2
