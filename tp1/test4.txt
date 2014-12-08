@@ -1,0 +1,9 @@
+% Tests pour l'exercice 4 dans le fichier ex4.pl
+
+itineraire(eclaibes, croix).
+chemin(eclaibes, croix,X).
+chemin(X,aulnoye,Y).
+cheminTailleFixe(eclaibes,gommegnies,L,2).  
+cheminTailleMin(eclaibes,gommegnies,L,2).
+
+voisin(bachant,X).
