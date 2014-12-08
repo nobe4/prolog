@@ -3,7 +3,7 @@
 % Règle : sommeList/2
 % Param 1 : Liste dont on cherche à sommer les éléments    
 % Param 2 : Résultat
-% Usage : Calcul de la somme des elements de la liste.
+% Usage : Calcul de la somme des éléments de la liste.
 sommeList([],0):- !.
 sommeList([L|T], Somme) :- sommeList(T,S), Somme is S + L.
 
