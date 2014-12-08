@@ -1,0 +1,19 @@
+% Tests pour l'exercice 2 dans le fichier ex2.pl
+
+f(0,2).
+f(1,2).
+f(4,X).
+
+h(0, 1, 2).
+h(1, 0, 2).
+h(1, 1, X).
+h(3, 3, X).
+
+s(1,1).
+s(2,X).
+s(10,X).
+
+facto(0,1).
+facto(10,X).
+
+c(3,2,X).
