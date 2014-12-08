@@ -7,7 +7,7 @@ f(0,2):- !.
 f(1,2):- !.
 f(N, X) :- N1 is N-1, f(N1,X1), X is 2*X1.
 
-% Titre : Definition de la règle h
+% Titre : Définition de la règle h
 % Règle : h/3
 % Param 1 : entrée (m)
 % Param 2 : entrée (n)
