@@ -32,3 +32,8 @@ tante(X,christian ).
 ancetre(X,bruno).
 
 fils(eric, simon).
+soeur(rolande, bruno).
+est_mere(rolande).
+cousin(monique, marcel).
+enfant(X, marie, eric).
+enfant(X, marie, simon).
