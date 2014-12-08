@@ -1,0 +1,19 @@
+% Tests pour l'exercice 3 dans le fichier ex3.pl
+
+sommeList([1,2,3,4],X).
+
+sommeImpaire([1,2,3,4,5],X).
+
+noccur(1,[1,2,1,4,5],X).
+
+adjacent(1,3,[1,1,2,3,1,2,2,3]).
+adjacent(1,3,[1,1,1,3,1,2,2,3]).
+
+prefix([1,2],[1,2,3]).
+prefix([1,2],[1,1,3]).
+
+suffix([2,3],[1,2,3]).
+suffix([1,3],[1,2,3]).
+
+double([a,b,c],[a,a,b,b,c,c]).
+double([a,b,c],[a,a,a,b,c,c]).
