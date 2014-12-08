@@ -1,28 +1,34 @@
-femme(augustine).
+% Tests pour l'exercice 1 dans le fichier ex1.pl
+
+femme(augustine). 
 homme(lea).
-femme(jennifer).% faux car jennifer nexiste pas
+femme(jennifer). -> faux car jennifer n'existe pas
 femme(X),enfant(_,X,_).
 homme(X).
 
 parent(franck, charles).
 parent(X, charles).
 parent(franck, X).
-
 grand_parent(marie,X).
 grand_parent(X, sonya).
-
 est_mere(marie).
 est_mere(augustine).
-
 est_pere(marcel).
-
+est_pere(franck).
 est_enfant(rolande,marie).
 est_enfant(rolande, X).
-
 fille(rolande, marie).
 fille(X, marie).
-
 fils(X, marie).
 fils(X, marie).
+soeur(X, eric).
+soeur(rolande, X).
+frere(X,rolande).
+frere(eric,X).
+frere_ou_soeur(bruno,X).
+frere_ou_soeur(X,rolande).
+oncle(bruno ,Y).
+tante(X,christian ).
+ancetre(X,bruno).
 
-k
+fils(eric, simon).
