@@ -25,7 +25,12 @@ verifieTennis([_,_,tennis]).
 
 % Predicat precedent/5
 % Param 1 : Maison 1
-% Usage : Verifie que la maison a pour sport tennis
+% Param 2 : Maison 2
+% Param 3 : Maison 3
+% Param 4 : Maison a tester 1
+% Param 5 : Maison a tester 2
+% Usage : Verifie que la maison a tester 1 est avant la maison a tester 2 
+%         dans les 3 choix suivats : M1 M2, M1 M3, M2 M3
 precedent(M1,M2,_,M1,M2).
 precedent(M1,_,M3,M1,M3).
 precedent(_,M2,M3,M2,M3).
@@ -50,9 +55,11 @@ different([C1,N1,S1],[C2,N2,S2],[C3,N3,S3]):-
     C1 \== C3, S1 \== S3, N1 \== N3,
     C2 \== C3, S2 \== S3, N2 \== N3.
 
-
-
-
+% Regle possibles/3
+% Param 1 : Maison 1
+% Param 2 : Maison 2
+% Param 3 : Maison 3
+% Usage : Genere 3 maisons, verifie qu'elles sont differentes et verifie les contraintes. 
 possibles(M1,M2,M3):-
     maison(M1), maison(M2), maison(M3),
     different(M1,M2,M3),
@@ -60,6 +67,9 @@ possibles(M1,M2,M3):-
     precedent(M1,M2,M3,[vert,_,_],[_,espagne,_]),
     precedent(M1,M2,M3,[blanc,anglais,_],[_,_,foot]).
 
+% Regle resultat/1
+% Param 1 : resultat
+% Usage : Genere la reponse a toutes les contraintes
 resultat(R):-
     possibles(M1,M2,M3),
     append([M1],[M2|[M3]],R).
