@@ -1,39 +1,147 @@
 % Tests pour l'exercice 1 dans le fichier ex1.pl
 
-femme(augustine). 
+femme(augustine).
+> true
+
 homme(lea).
-femme(jennifer). -> faux car jennifer n'existe pas
+> false
+
+femme(jennifer). 
+> false -> faux car jennifer n'existe pas
+
 femme(X),enfant(_,X,_).
+> X = marie
+X = marie
+X = marie
+X = marie
+X = noemie
+X = noemie
+X = rolande
+X = rolande
+X = solange
+X = christine
+X = christine
+X = christine
+X = lea
+
 homme(X).
+> X = simon
+X = bruno
+X = auguste
+X = eric
+X = christian
+X = marcel
+X = gerard
+X = franck
+X = charles
 
 parent(franck, charles).
+> true
+
 parent(X, charles).
+> X = lea
+X = franck
+
 parent(franck, X).
+> X = charles
+
 grand_parent(marie,X).
+> X = christian
+X = marcel
+X = gerard
+X = franck
+
 grand_parent(X, sonya).
+> X = rolande
+X = auguste
+
 est_mere(marie).
+> true 
+
 est_mere(augustine).
+> false
+
 est_pere(marcel).
+> false
+
 est_pere(franck).
+> true 
+
 est_enfant(rolande,marie).
+> true
+
 est_enfant(rolande, X).
+> X = marie
+X = simon
+
 fille(rolande, marie).
+> true
+
 fille(X, marie).
+> X = rolande
+X = augustine
+
 fils(X, marie).
-fils(X, marie).
+> X = bruno
+X = eric
+
 soeur(X, eric).
+> X = rolande
+X = augustine
+
 soeur(rolande, X).
+> X = bruno
+X = augustine
+X = eric
+
 frere(X,rolande).
+> X = bruno
+X = eric
+
 frere(eric,X).
+> X = bruno
+X = rolande
+X = augustine
+
 frere_ou_soeur(bruno,X).
+> X = rolande
+X = augustine
+X = eric
+
 frere_ou_soeur(X,rolande).
+> X = augustine
+X = bruno
+X = eric
+
 oncle(bruno ,Y).
-tante(X,christian ).
+> Y = gerard
+Y = franck
+
+tante(X,christian
+> X = rolande
+X = augustine
+
 ancetre(X,bruno).
+> X = marie
+X = simon
 
 fils(eric, simon).
+> true
+
 soeur(rolande, bruno).
+> true
+
 est_mere(rolande).
+> true
+
 cousin(monique, marcel).
+> false
+
 enfant(X, marie, eric).
+> false
+
 enfant(X, marie, simon).
+> X = bruno
+X = rolande
+X = augustine
+X = eric
