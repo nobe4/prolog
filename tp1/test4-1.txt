@@ -1,7 +1,33 @@
 % Tests pour l'exercice 4 dans le fichier ex4-1.pl
 
 chemin(bachant,gommegnies,L,C).
+> C = 15,
+L = [bachant, croix, denain, gommegnies]
+C = 11,
+L = [bachant, denain, gommegnies]
+C = 10,
+L = [bachant, friche, gommegnies]
+
 cheminCoutMin(eclaibes,X,L,11).
+> L = [eclaibes, friche, gommegnies],
+X = gommegnies
+L = [eclaibes, bachant, aulnoye],
+X = aulnoye
+L = [eclaibes, bachant, denain],
+X = denain
+L = [eclaibes, bachant, friche],
+X = friche
+L = [eclaibes, bachant, croix, denain],
+X = denain
+L = [eclaibes, bachant, croix, denain, gommegnies],
+X = gommegnies
+L = [eclaibes, bachant, denain, gommegnies],
+X = gommegnies
+L = [eclaibes, bachant, friche, gommegnies],
+X = gommegnies
 
 chemin(gommegnies,aulnoye,L,20).
+> false
+
 chemin(aulnoye,gommegnies,L,20).
+> false
