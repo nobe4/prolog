@@ -33,13 +33,13 @@ par l’interpreteur Prolog comme réponse
 
 
 trouver(Reponse) :- 
-  inconnue(Tableau), 
+  	inconnue(Tableau), 
 	renseignements_sur(Tableau), 
 	questions(Tableau, Reponse).
 
 inconnue(Tableau):-.
 
-maison(Tableau, Maison):-.
+une_maison(Tableau, Maison):-.
 nationalite(Maison, N):-.
 couleur(Maison, C):-.
 sport (Maison, S):-.
