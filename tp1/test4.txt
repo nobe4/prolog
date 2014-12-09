@@ -1,9 +1,31 @@
 % Tests pour l'exercice 4 dans le fichier ex4.pl
 
 itineraire(eclaibes, croix).
+> true
+
 chemin(eclaibes, croix,X).
+> X = [eclaibes, bachant, croix]
+
 chemin(X,aulnoye,Y).
+> X = bachant,
+Y = [bachant, aulnoye]
+X = eclaibes,
+Y = [eclaibes, aulnoye]
+X = eclaibes,
+Y = [eclaibes, bachant, aulnoye]
+
 cheminTailleFixe(eclaibes,gommegnies,L,2).  
+> L = [eclaibes, friche, gommegnies]
+
 cheminTailleMin(eclaibes,gommegnies,L,2).
+> L = [eclaibes, friche, gommegnies]
+L = [eclaibes, bachant, croix, denain, gommegnies]
+L = [eclaibes, bachant, denain, gommegnies]
+L = [eclaibes, bachant, friche, gommegnies]
 
 voisin(bachant,X).
+> X = aulnoye
+X = croix
+X = denain
+X = friche
+X = eclaibes
