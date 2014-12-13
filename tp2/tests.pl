@@ -13,7 +13,7 @@ entier_liste(0110,R).
 > R = [0, 1, 1, 0]
 
 inverse([a,b,c],[c,b,a]).
-> true 
+> true
 
 inverse([a,b,c],R).
 > R = [c, b, a]
@@ -23,3 +23,23 @@ palindromeNb([1,2,1]).
 
 palindromeNb([1,2,2,1]).
 > true
+
+anagrame(algorithme,logarithme).
+> true
+
+solve([Z,E,R,O],[Z,E,R,O],[R,I,E,N]).
+> Z = 4,
+E = 8,
+R = 9,
+O = 1,
+I = 7,
+N = 2.
+
+solve([0,L,O,G,I,C],[0,L,O,G,I,C],[P,R,O,L,O,G]).
+> L = 9,
+O = 0,
+G = 4,
+I = 5,
+C = 2,
+P = 1,
+R = 8 .
