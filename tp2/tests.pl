@@ -43,3 +43,9 @@ I = 5,
 C = 2,
 P = 1,
 R = 8 .
+
+conversion([v,i,i],X).
+> X = 7 .
+
+conversionNormal(101).
+> CI.
