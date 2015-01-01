@@ -1,3 +1,9 @@
+% Predicats : homme/4
+% Definit un homme avec des caracteristiques
+% param 1 : nom de l'homme
+% param 2 : taille de l'homme
+% param 3 : couleur des cheveux de l'homme
+% param 4 : age de l'homme
 homme(brice, grande, blonds, jeune).
 homme(damien, grande, blonds, jeune).
 homme(fernando, grande, blonds, jeune).
@@ -9,6 +15,12 @@ homme(claytonn, petite, roux, vieux).
 homme(miles, petite, chatains, vieux).
 homme(bruno, petite, chatains, vieux).
 
+% Predicats : femme/4
+% Definit une femme avec des caracteristiques
+% param 1 : nom de la femme
+% param 2 : taille de la femme
+% param 3 : couleur des cheveux de la femme
+% param 4 : age de la femme
 femme(maia, grande, blonds, jeune).
 femme(evelyn, grande, blonds, jeune).
 femme(paloma, grande, blonds, jeune).
@@ -20,6 +32,12 @@ femme(saniya, petite, roux, vieux).
 femme(dania, petite, chatains, vieux).
 femme(madyson, petite, chatins, vieux).
 
+% Predicats : gout/4
+% Definit des gout d'une personne
+% param 1 : nom de la personne
+% param 2 : gout musical
+% param 3 : gout cinematographique
+% param 4 : gout sportif
 gout(brice, classique, aventure, tennis).
 gout(damien, classique, aventure, tennis).
 gout(fernando, classique, aventure, tennis).
@@ -30,7 +48,6 @@ gout(arnold, jazz, policier, jogging).
 gout(claytonn, jazz, policier, jogging).
 gout(miles, jazz, policier, jogging).
 gout(bruno, jazz, policier, jogging).
-
 gout(maia, classique, aventure, tennis).
 gout(evelyn, classique, aventure, tennis).
 gout(paloma, classique, aventure, tennis).
@@ -42,6 +59,12 @@ gout(saniya, jazz, policier, jogging).
 gout(dania, jazz, policier, jogging).
 gout(madyson, jazz, policier, jogging).
 
+% Predicats : recherche/4
+% Definit les recherches d'une personne
+% param 1 : nom de la personne
+% param 2 : taille recherchee
+% param 3 : couleur de cheveux recherchee
+% param 4 : age recherche
 recherche(madyson, grande, blonds, jeune).
 recherche(dania, grande, blonds, jeune).
 recherche(saniya, grande, blonds, jeune).
@@ -52,7 +75,6 @@ recherche(kassandra, petite, roux, vieux).
 recherche(paloma, petite, roux, vieux).
 recherche(evelyn, petite, chatins, vieux).
 recherche(maia, petite, chatins, vieux).
-
 recherche(bruno, grande, blonds, jeune).
 recherche(miles, grande, blonds, jeune).
 recherche(claytonn, grande, blonds, jeune).
@@ -64,10 +86,32 @@ recherche(fernando, petite, roux, vieux).
 recherche(damien, petite, chatins, vieux).
 recherche(brice, petite, chatins, vieux).
 
+% Predicats : convient_physiquement/2
+% Recherche si deux personnes se conviennent physiquement
+% param 1 : nom de la personne 1
+% param 2 : nom de la personne 2
+convient_physiquement(X, Y):-
+  femme(X, _, _, _), 
+  homme(Y, E, R, T), 
+  recherche(X,E, R, T).
+convient_physiquement(X, Y):-
+  homme(X, _, _, _), 
+  femme(Y, E, R, T), 
+  recherche(X,E, R, T).
 
-convient-physiquement(X, Y):-femme(X, _, _, _), homme(Y, E, R, T), recherche(X,E, R, T).
-convient-physiquement(X, Y):-homme(X, _, _, _), femme(Y, E, R, T), recherche(X,E, R, T).
-
-meme_gout(X, Y):-gout(X, E, R, T), gout(Y, E, R, T).
-
-couple(X, Y):-convient-physiquement(X, Y), convient-physiquement(Y, X), meme_gout(X, Y).
+% Predicats : meme_gout/2
+% Recherche si deux personnes ont les memes gouts
+% param 1 : nom de la personne 1
+% param 2 : nom de la personne 2
+meme_gout(X, Y):-
+  gout(X, E, R, T), 
+  gout(Y, E, R, T).
+  
+% Predicats : couple/2
+% Recherche si deux personnes peuvent etre en couple
+% param 1 : nom de la personne 1
+% param 2 : nom de la personne 2
+couple(X, Y):-
+  convient_physiquement(X, Y), 
+  convient_physiquement(Y, X), 
+  meme_gout(X, Y).
