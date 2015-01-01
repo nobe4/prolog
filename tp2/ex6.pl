@@ -31,19 +31,21 @@ conversion([A, B | Queue], X, Normal) :-
 	conversion([B | Queue], NewX, Normal).
 
 % Regle : Conversion d'un nombre normal en ecriture romaine et affichage
-% param 1 : le nombre a convertir
-conversionNormal(0).
-conversionNormal(N) :- N < 4, put("I"), M is N - 1, conversionNormal(M).
-conversionNormal(N) :- N = 4, put("I"), put("V").
-conversionNormal(N) :- N = 5, put("V").
-conversionNormal(N) :- N < 9, put("V"), M is N - 5, conversionNormal(M).
-conversionNormal(N) :- N = 9, put("I"), put("X").
-conversionNormal(N) :- N < 40, put("X"), M is N - 10, conversionNormal(M).
-conversionNormal(N) :- N < 50, put("X"), put("L"), M is N - 40, conversionNormal(M).
-conversionNormal(N) :- N < 90, put("L"), M is N - 50, conversionNormal(M).
-conversionNormal(N) :- N < 100, put("X"), put("C"), M is N - 90, conversionNormal(M).
-conversionNormal(N) :- N < 400, put("C"), M is N - 100, conversionNormal(M).
-conversionNormal(N) :- N < 500, put("C"), put("D"), M is N - 400, conversionNormal(M).
-conversionNormal(N) :- N < 900, put("D"), put("D"), M is N - 500, conversionNormal(M).
-conversionNormal(N) :- N < 1000, put("C"), put("M"), M is N - 900, conversionNormal(M).
-conversionNormal(N) :- N < 4000, put("M"), M is N - 1000, conversionNormal(M).
+% param 1 : Le nombre a convertir
+% param 2 : Le resultat
+conversionNormal(N, _):- N < 0, !.
+conversionNormal(0, []).
+conversionNormal(N, [i|Roman])   :- N < 4, M is N - 1, conversionNormal(M, Roman).
+conversionNormal(4, [i,v]).
+conversionNormal(5, [v]).
+conversionNormal(N, [v|Roman])   :- N < 9, M is N - 5, conversionNormal(M, Roman).
+conversionNormal(9, [i,x]).
+conversionNormal(N, [x|Roman])   :- N < 40, M is N - 10, conversionNormal(M, Roman).
+conversionNormal(N, [x,l|Roman]) :- N < 50, M is N - 40, conversionNormal(M, Roman).
+conversionNormal(N, [l|Roman])   :- N < 90, M is N - 50, conversionNormal(M, Roman).
+conversionNormal(N, [x,c|Roman]) :- N < 100, M is N - 90, conversionNormal(M, Roman).
+conversionNormal(N, [c|Roman])   :- N < 400, M is N - 100, conversionNormal(M, Roman).
+conversionNormal(N, [c,d|Roman]) :- N < 500, M is N - 400, conversionNormal(M, Roman).
+conversionNormal(N, [d,d|Roman]) :- N < 900, M is N - 500, conversionNormal(M, Roman).
+conversionNormal(N, [c,m|Roman]) :- N < 1000, M is N - 900, conversionNormal(M, Roman).
+conversionNormal(N, [m|Roman])   :- N < 4000, M is N - 1000, conversionNormal(M, Roman).
