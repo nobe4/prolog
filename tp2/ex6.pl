@@ -10,7 +10,7 @@ chiffre(c, 100).
 chiffre(d, 500).
 chiffre(m, 1000).
 
-% Regle : conversion/2
+% Regle : conversion/2 -> pour appel de conversion/3
 % Usage : Conversion d'un nombre romain en ecriture normale
 % param 1 : Un tableau contenant les caracteres romains
 % param 2 : Le resultat
