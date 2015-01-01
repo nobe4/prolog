@@ -1,13 +1,13 @@
 %% Puzzle logique
-% Predicat couleur/1
+% Predicat : couleur/1
 % Usage : defini les couleurs utilisees
 couleur(vert). couleur(blanc). couleur(bleu).
 
-% Predicat nation/1
+% Predicat : nation/1
 % Usage : defini les couleurs utilisees
 nation(france). nation(anglais). nation(espagne).
 
-% Predicat sport/1
+% Predicat : sport/1
 % Usage : defini les couleurs utilisees
 sport(tennis). sport(foot). sport(natation).
 
