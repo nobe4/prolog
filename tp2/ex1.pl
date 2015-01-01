@@ -1,5 +1,5 @@
-% Predicats : homme/4
-% Definit un homme avec des caracteristiques
+% Predicat : homme/4
+% Usage : Definit un homme avec des caracteristiques
 % param 1 : nom de l'homme
 % param 2 : taille de l'homme
 % param 3 : couleur des cheveux de l'homme
@@ -15,8 +15,8 @@ homme(claytonn, petite, roux, vieux).
 homme(miles, petite, chatains, vieux).
 homme(bruno, petite, chatains, vieux).
 
-% Predicats : femme/4
-% Definit une femme avec des caracteristiques
+% Predicat : femme/4
+% Usage : Definit une femme avec des caracteristiques
 % param 1 : nom de la femme
 % param 2 : taille de la femme
 % param 3 : couleur des cheveux de la femme
@@ -32,8 +32,8 @@ femme(saniya, petite, roux, vieux).
 femme(dania, petite, chatains, vieux).
 femme(madyson, petite, chatins, vieux).
 
-% Predicats : gout/4
-% Definit des gout d'une personne
+% Predicat : gout/4
+% Usage : Definit des gout d'une personne
 % param 1 : nom de la personne
 % param 2 : gout musical
 % param 3 : gout cinematographique
@@ -59,8 +59,8 @@ gout(saniya, jazz, policier, jogging).
 gout(dania, jazz, policier, jogging).
 gout(madyson, jazz, policier, jogging).
 
-% Predicats : recherche/4
-% Definit les recherches d'une personne
+% Predicat : recherche/4
+% Usage : Definit les recherches d'une personne
 % param 1 : nom de la personne
 % param 2 : taille recherchee
 % param 3 : couleur de cheveux recherchee
@@ -86,8 +86,8 @@ recherche(fernando, petite, roux, vieux).
 recherche(damien, petite, chatins, vieux).
 recherche(brice, petite, chatins, vieux).
 
-% Predicats : convient_physiquement/2
-% Recherche si deux personnes se conviennent physiquement
+% Regle : convient_physiquement/2
+% Usage : Recherche si deux personnes se conviennent physiquement
 % param 1 : nom de la personne 1
 % param 2 : nom de la personne 2
 convient_physiquement(X, Y):-
@@ -99,16 +99,16 @@ convient_physiquement(X, Y):-
   femme(Y, E, R, T), 
   recherche(X,E, R, T).
 
-% Predicats : meme_gout/2
-% Recherche si deux personnes ont les memes gouts
+% Regle : meme_gout/2
+% Usage : Recherche si deux personnes ont les memes gouts
 % param 1 : nom de la personne 1
 % param 2 : nom de la personne 2
 meme_gout(X, Y):-
   gout(X, E, R, T), 
   gout(Y, E, R, T).
   
-% Predicats : couple/2
-% Recherche si deux personnes peuvent etre en couple
+% Regle : couple/2
+% Usage : Recherche si deux personnes peuvent etre en couple
 % param 1 : nom de la personne 1
 % param 2 : nom de la personne 2
 couple(X, Y):-
