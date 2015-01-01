@@ -1,3 +1,14 @@
+% Test pour l'exercice 1 dans le fichier ex1.pl
+couple(madyson,X).
+> false
+
+couple(irene,X).
+> X = manuel
+X = ezequiel
+
+couple(ezequiel,alayah).
+> true
+
 % Test pour l'exercice 2 dans le fichier ex2.pl
 resultat(R).
 > R = [[blanc, anglais, tennis], [vert, france, natation], [bleu, espagne, foot]]
