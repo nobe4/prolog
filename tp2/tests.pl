@@ -1,5 +1,12 @@
-% Test pour l'exercice 3 dans le fichier ex3.pl
+% Test pour l'exercice 2 dans le fichier ex2.pl
+resultat(R).
+> R = [[blanc, anglais, tennis], [vert, france, natation], [bleu, espagne, foot]]
 
+% Reponses aux questions : 
+% Le francais fait de la natation
+% La maison bleue est habitee par l'espagnol
+
+% Test pour l'exercice 3 dans le fichier ex3.pl
 remplace(a, z, [a, b, r, a, c], L2).
 > L2 = [z, b, r, z, c]
 L2 = [z, b, r, a, c]
@@ -24,6 +31,20 @@ palindromeNb([1,2,1]).
 palindromeNb([1,2,2,1]).
 > true
 
+% Tests pour l'exercice 4 dans le fichier ex4.pl
+queDesZeros([0, 0, 0, 0, 0, 0, 0]).
+> true
+
+queDesZeros([1, 0, 0, 1]).
+> false
+
+valeurEntier([1, 1, 0, 1], R).
+> R = 13
+
+valeurBinaire(13, R).
+> R = [1, 1, 0, 1]
+
+% Tests pour l'exercice 5 dans le fichier ex5.pl
 anagrame(algorithme,logarithme).
 > true
 
@@ -44,8 +65,9 @@ C = 2,
 P = 1,
 R = 8 .
 
+% Tests pour l'exercice 6 dans le fichier ex6.pl
 conversion([v,i,i],X).
 > X = 7 .
 
-conversionNormal(101).
-> CI.
+conversionNormal(101,L).
+> L = [c, i]
