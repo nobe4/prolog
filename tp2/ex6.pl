@@ -1,4 +1,5 @@
-% Predicat : Definition de la lettre correspondant a un nombre romain
+% Predicat : chiffre/2
+% Usage : Definition de la lettre correspondant a un nombre romain
 % param 1 : La lettre
 % param 2 : La valeur
 chiffre(i, 1).
@@ -9,11 +10,11 @@ chiffre(c, 100).
 chiffre(d, 500).
 chiffre(m, 1000).
 
-% Regle : Conversion d'un nombre romain en ecriture normale
+% Regle : conversion/2
+% Usage : Conversion d'un nombre romain en ecriture normale
 % param 1 : Un tableau contenant les caracteres romains
 % param 2 : Le resultat
 conversion(Romain, Normal) :- conversion(Romain, 0, Normal).
-
 conversion([], X, X).
 conversion([A], X, Normal) :-
 	chiffre(A, AVal),
@@ -23,14 +24,14 @@ conversion([A, B | Queue], X, Normal) :-
 	AVal < BVal,
 	NewX is X + BVal - AVal,
 	conversion(Queue, NewX, Normal).
-
 conversion([A, B | Queue], X, Normal) :-
 	chiffre(A, AVal), chiffre(B, BVal),
 	AVal >= BVal,
 	NewX is X + AVal,
 	conversion([B | Queue], NewX, Normal).
 
-% Regle : Conversion d'un nombre normal en ecriture romaine et affichage
+% Regle : conversionNormal/2
+% Usage : Conversion d'un nombre normal en ecriture romaine et affichage
 % param 1 : Le nombre a convertir
 % param 2 : Le resultat
 conversionNormal(N, _):- N < 0, !.
