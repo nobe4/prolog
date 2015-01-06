@@ -61,7 +61,7 @@ sommeChiffres(D1,D2,RetenueDroite,D,RetenueGauche,PossibleDigs,Digs):-
 	RetenueGauche is S // 10.
 
 % Regle supprimer/3
-% Usage : Regle effectuant la suppresion d'un element au sein d'une liste
+% Usage : Regle effectuant la suppression d'un element au sein d'une liste
 % param 1 : L'element a supprimer
 % param 2 : La liste de recherche
 % param 3 : La liste resultat
