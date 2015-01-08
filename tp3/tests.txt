@@ -1,0 +1,29 @@
+% Test pour l'exercice 1 dans le fichier ex1.pl
+hanoi(3,e1,e2,e3,Depl).
+> Depl = [deplacer(e1, e2), deplacer(e1, e3), deplacer(e2, e3), deplacer(e1, e2), deplacer(e3, e1), deplacer(e3, e2), deplacer(e1, e2)]
+
+hanoi(10,e1,e2,e3,Depl), length(Depl,L).
+> Depl = [deplacer(e1, e3), deplacer(e1, e2), deplacer(e3, e2), deplacer(e1, e3), 
+deplacer(e2, e1), deplacer(e2, e3), deplacer(e1, e3), deplacer(e1, e2), 
+deplacer(e3, e2), deplacer(e3, e1), ... 
+L = 1023
+
+% Test pour l'exercice 2 dans le fichier ex2.pl
+huitReines(R), solution(R).
+> R = [reine(1, 4), reine(2, 2), reine(3, 7), reine(4, 3), reine(5, 6), reine(6, 8), reine(7, 5), reine(8, 1)]
+R = [reine(1, 5), reine(2, 2), reine(3, 4), reine(4, 7), reine(5, 3), reine(6, 8), reine(7, 6), reine(8, 1)]
+...
+
+huitReines(R), aggregate_all(count, solution(R), Count).
+> Count = 92
+
+% Test pour l'exercice 3 dans le fichier ex3.pl
+
+% Test pour l'exercice 4 dans le fichier ex4.pl
+length(X, 7), solution([r,r,r,r],X).
+> X = [chevre, rien, loup, chevre, chou, rien, chevre],
+X = [chevre, rien, chou, chevre, loup, rien, chevre]
+
+length(X, 9), solution([r,r,r,r],X).
+> X = [chevre, chevre, chevre, rien, loup, chevre, chou, rien, chevre],
+X = [chevre, chevre, chevre, rien, chou, chevre, loup, rien, chevre]
