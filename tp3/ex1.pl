@@ -1,4 +1,8 @@
-
+% Regle : hanoi/5
+% Usage : Effectue la resolution du probleme des tours d'hanoi
+% param 1 : nombre de palets
+% param 2 - 4 : nom des emplacements
+% param 5 : Retour des deplacements
 
 hanoi(1,A,B,_,[deplacer(A,B)]).
 hanoi(N,A,B,C,Deplacement) :- 
