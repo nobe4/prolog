@@ -8,7 +8,7 @@ reine(_,_).
 solution([]).
 solution([reine(X,Y)|Others]) :-
  solution(Others),
- member(Y, [1,2,3,4,5,6,7,8]),
+ membre(Y, [1,2,3,4,5,6,7,8]),
  nonAttaque(reine(X,Y), Others).
 
 % Regle : nonAttaque/2
