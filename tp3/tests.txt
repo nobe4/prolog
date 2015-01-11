@@ -29,7 +29,6 @@ rend(19.73,3.14,R).
 rend(1,2,R).
 > false
 
-
 % Test pour l'exercice 4 dans le fichier ex4.pl
 length(X, 7), solution([r,r,r,r],X).
 > X = [chevre, rien, loup, chevre, chou, rien, chevre],
