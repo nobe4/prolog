@@ -18,6 +18,17 @@ huitReines(R), aggregate_all(count, solution(R), Count).
 > Count = 92
 
 % Test pour l'exercice 3 dans le fichier ex3.pl
+% avec comme possiblites de rendu : [50,20,10,5,2,1,0.5,0.2,0.1,0.05,0.02,0.01]
+rend(109.30,51.41,R).
+> R = [50, 5, 2, 0.5, 0.2, 0.1, 0.05, 0.02, 0.02]
+
+% avec comme possiblites de rendu : [2,1,0.5,0.2,0.1,0.05,0.02,0.01] (que des pieces)
+rend(19.73,3.14,R).
+> R = [2, 2, 2, 2, 2, 2, 2, 2, 0.5, 0.05, 0.02, 0.02]
+
+rend(1,2,R).
+> false
+
 
 % Test pour l'exercice 4 dans le fichier ex4.pl
 length(X, 7), solution([r,r,r,r],X).
