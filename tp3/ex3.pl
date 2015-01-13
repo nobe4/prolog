@@ -31,8 +31,8 @@ rend(Argent, Prix, []):- Argent =< 0, Prix =< 0.
 
 % Cas 3 : On fait la difference entre l'argent et ce qu'il y a a rendre 
 rend(Argent, Prix, Rendu):- 
-    ArgentRound is (round(Argent * 100.0))/100.0, % correction des imprecision
-    PrixRound is (round(Prix * 100.0))/100.0, % correction des imprecision
+    ArgentRound is (round(Argent * 100.0))/100.0, % correction des imprecisions
+    PrixRound is (round(Prix * 100.0))/100.0, % correction des imprecisions
     Diff is ArgentRound - PrixRound, 
     % Liste des possibilites de rendu 
     monnaie(Diff,[50,20,10,5,2,1,0.5,0.2,0.1,0.05,0.02,0.01],Piece),  
